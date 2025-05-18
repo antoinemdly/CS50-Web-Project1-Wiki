@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New Page
+{% endblock %}
+
+{% block body %}
+    <h1>New Page</h1>
+    <h5>{{ error|default:'' }}</h5>
+    <form style="display: flex; flex-direction: column;" method="post">
+        {% csrf_token %}
+        <div>
+            <input placeholder="Title" name="title" value="{{ title|default:'' }}">
+        </div>
+        <div>
+            <textarea name="markdown" placeholder="Markdown">{{ markdown|default:'' }}</textarea>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+{% endblock %}

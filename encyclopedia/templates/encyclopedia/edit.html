@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit Page
+{% endblock %}
+
+{% block body %}
+    <h1>Edit Page</h1>
+    <form style="display: flex; flex-direction: column;" method="post">
+        {% csrf_token %}
+        <div>
+            <textarea name="markdown_final" placeholder="Markdown">{{ markdown }}</textarea>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+{% endblock %}
